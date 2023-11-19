@@ -20,6 +20,10 @@ class Repository {
         return flowOf(members)
     }
 
+    fun getMemberById(id: Int): Flow<Member> {
+        return flowOf(members.first { it.id == id })
+    }
+
     companion object {
         @Volatile
         private var instance: Repository? = null

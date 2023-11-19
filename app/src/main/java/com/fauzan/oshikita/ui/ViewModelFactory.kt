@@ -3,17 +3,17 @@ package com.fauzan.oshikita.ui
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.fauzan.oshikita.data.Repository
+import com.fauzan.oshikita.ui.screen.detail.DetailViewModel
 import com.fauzan.oshikita.ui.screen.home.HomeViewModel
 
 class ViewModelFactory(private val repository: Repository) : ViewModelProvider.NewInstanceFactory() {
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        when {
-            modelClass.isAssignableFrom(HomeViewModel::class.java) -> {
-                return HomeViewModel(repository) as T
-            }
-        }
+        return when {
+            modelClass.isAssignableFrom(HomeViewModel::class.java) -> HomeViewModel(repository)
+            modelClass.isAssignableFrom(DetailViewModel::class.java) -> DetailViewModel(repository)
 
-        throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
+            else -> throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
+        } as T
     }
 }

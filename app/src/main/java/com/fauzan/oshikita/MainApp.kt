@@ -12,16 +12,19 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.fauzan.oshikita.model.NavigationItem
+import com.fauzan.oshikita.navigation.NavArg
 import com.fauzan.oshikita.navigation.Screen
 import com.fauzan.oshikita.ui.component.BottomBar
 import com.fauzan.oshikita.ui.screen.AboutScreen
-import com.fauzan.oshikita.ui.screen.DetailScreen
 import com.fauzan.oshikita.ui.screen.FavoriteScreen
+import com.fauzan.oshikita.ui.screen.detail.DetailScreen
 import com.fauzan.oshikita.ui.screen.home.HomeScreen
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -68,11 +71,19 @@ fun MainApp(
             modifier = Modifier.padding(innerPadding)
         ) {
             composable(Screen.Home.route) {
-                HomeScreen()
+                HomeScreen(
+                    navigateToDetail = { id ->
+                        navController.navigate(Screen.Detail.createRoute(id))
+                    }
+                )
             }
 
-            composable(Screen.Detail.route) {
-                DetailScreen()
+            composable(
+                route = Screen.Detail.route,
+                arguments = listOf(navArgument(NavArg.MEMBER_ID.key) { type = NavType.IntType })
+            ) {
+                val memberId = it.arguments?.getInt(NavArg.MEMBER_ID.key) ?: -1
+                DetailScreen(memberId = memberId)
             }
 
             composable(Screen.Favorite.route) {

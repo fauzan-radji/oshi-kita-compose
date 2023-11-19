@@ -1,4 +1,4 @@
-package com.fauzan.oshikita.ui.screen.home
+package com.fauzan.oshikita.ui.screen.detail
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -6,22 +6,21 @@ import com.fauzan.oshikita.data.Repository
 import com.fauzan.oshikita.model.Member
 import com.fauzan.oshikita.ui.common.UiState
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.launch
 
-class HomeViewModel(private val repository: Repository) : ViewModel() {
-    private val _uiState: MutableStateFlow<UiState<List<Member>>> = MutableStateFlow(UiState.Loading)
-    val uiState: StateFlow<UiState<List<Member>>> get() = _uiState
+class DetailViewModel(private val repository: Repository) : ViewModel() {
+    private val _uiState: MutableStateFlow<UiState<Member>> = MutableStateFlow(UiState.Loading)
+    val uiState: MutableStateFlow<UiState<Member>> get() = _uiState
 
-    fun getAllMember() {
+    fun getMemberById(id: Int) {
         viewModelScope.launch {
-            repository.getAllMember()
+            repository.getMemberById(id)
                 .catch {
                     _uiState.value = UiState.Error(it.message.toString())
                 }
-                .collect { members ->
-                    _uiState.value = UiState.Success(members)
+                .collect { member ->
+                    _uiState.value = UiState.Success(member)
                 }
         }
     }

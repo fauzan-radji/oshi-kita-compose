@@ -1,6 +1,7 @@
 package com.fauzan.oshikita.model
 
 data class Member(
+    val id: Int,
     val name: String,
     val nicknames: List<String>,
     val fanbase: String,

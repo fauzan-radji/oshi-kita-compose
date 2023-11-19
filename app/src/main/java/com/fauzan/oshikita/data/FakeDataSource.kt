@@ -5,6 +5,7 @@ import com.fauzan.oshikita.model.Member
 object FakeDataSource {
     val dummyMembers = listOf(
         Member(
+            id = 1,
             name = "Adzana Shaliha Alifyaa",
             nicknames = listOf("Ashel", "Acel"),
             fanbase = "Ashelytic",
@@ -15,6 +16,7 @@ object FakeDataSource {
         ),
         // Amanda Sukma
         Member(
+            id = 3,
             name = "Angelina Christy",
             nicknames = listOf("Christy", "Kitoy", "Toya"),
             fanbase = "Christyzer",
@@ -24,6 +26,7 @@ object FakeDataSource {
             photoUrl = "https://jkt48.com/profile/angelina_christy.jpg?v=20230116"
         ),
         Member(
+            id = 4,
             name = "Aurellia",
             nicknames = listOf("Lia", "Oreli", "Coach Lia"),
             fanbase = "Liamelior",
@@ -33,6 +36,7 @@ object FakeDataSource {
             photoUrl = "https://jkt48.com/profile/aurellia.jpg?v=20230531"
         ),
         Member(
+            id = 5,
             name = "Azizi Shafaa Asadel",
             nicknames = listOf("Zee", "Azizi", "Zizoy", "Zoya"),
             fanbase = "Zeemotion",
@@ -43,6 +47,7 @@ object FakeDataSource {
         ),
         // Callie
         Member(
+            id = 7,
             name = "Cornelia Vanisa",
             nicknames = listOf("Oniel"),
             fanbase = "Onielity",
@@ -54,6 +59,7 @@ object FakeDataSource {
         // Ola
         // Feni
         Member(
+            id = 10,
             name = "Fiony Alveria Tantri",
             nicknames = listOf("Fiony", "Pio", "Ce Pio", "Tantri"),
             fanbase = "Symfiony",
@@ -64,6 +70,7 @@ object FakeDataSource {
         ),
         // Flora
         Member(
+            id = 12,
             name = "Raden Roro Freyanashifa Jayawardana",
             nicknames = listOf("Freya", "Fre", "Nunung", "Nurdana"),
             fanbase = "Freyanation",
@@ -74,6 +81,7 @@ object FakeDataSource {
         ),
         // Ela
         Member(
+            id = 14,
             name = "Gita Sekar Andarini",
             nicknames = listOf("Gita"),
             fanbase = "Gitroops",
@@ -90,6 +98,7 @@ object FakeDataSource {
         // Atin
         // Lulu
         Member(
+            id = 22,
             name = "Marsha Lenathea Lapian",
             nicknames = listOf("Marsha", "Matcha", "Anime", "Maeng"),
             fanbase = "MarshaOshi",
@@ -101,6 +110,7 @@ object FakeDataSource {
         // Mute
         // Raisha
         Member(
+            id = 25,
             name = "Reva Fidela Adel Pantjoro",
             nicknames = listOf("Adel", "Dedel", "Reva"),
             fanbase = "Adellion",
@@ -110,6 +120,7 @@ object FakeDataSource {
             photoUrl = "https://jkt48.com/profile/reva_fidela.jpg?v=20230116"
         ),
         Member(
+            id = 26,
             name = "Shani Indira Natio",
             nicknames = listOf("Shani"),
             fanbase = "Inshanity",
@@ -120,6 +131,7 @@ object FakeDataSource {
         ),
         // Ci Gre
         Member(
+            id = 28,
             name = "Yessica Tamara",
             nicknames = listOf("Chika", "Chikuy"),
             fanbase = "Never ending to Achieve Victory for Yessica (NAVY)",

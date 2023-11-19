@@ -1,5 +1,6 @@
 package com.fauzan.oshikita.ui.screen.home
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.lazy.grid.GridCells
@@ -21,7 +22,8 @@ fun HomeScreen(
     modifier: Modifier = Modifier,
     viewModel: HomeViewModel = viewModel(
         factory = ViewModelFactory(Injection.provideRepository())
-    )
+    ),
+    navigateToDetail: (id: Int) -> Unit
 ) {
     viewModel.uiState.collectAsState(initial = UiState.Loading).value.let { uiState ->
         when (uiState) {
@@ -32,7 +34,8 @@ fun HomeScreen(
             is UiState.Success -> {
                 HomeContent(
                     members = uiState.data,
-                    modifier = modifier
+                    modifier = modifier,
+                    navigateToDetail = navigateToDetail
                 )
             }
 
@@ -44,7 +47,8 @@ fun HomeScreen(
 @Composable
 fun HomeContent(
     members: List<Member>,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    navigateToDetail: (id: Int) -> Unit,
 ) {
     LazyVerticalGrid(
         columns = GridCells.Adaptive(100.dp),
@@ -53,11 +57,14 @@ fun HomeContent(
         verticalArrangement = Arrangement.spacedBy(16.dp),
         modifier = modifier
     ) {
-        items(members) { member ->
+        items(members, key = { it.id }) { member ->
             MemberCard(
                 photoUrl = member.photoUrl,
                 name = member.name,
-                generation = member.generation
+                generation = member.generation,
+                modifier = Modifier.clickable {
+                    navigateToDetail(member.id)
+                }
             )
         }
     }
