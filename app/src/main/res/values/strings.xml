@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Oshi Kita</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_detail">Detail</string>
+    <string name="menu_favorite">Favorite</string>
+    <string name="menu_about">About</string>
+</resources>
