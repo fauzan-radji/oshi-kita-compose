@@ -4,4 +4,11 @@
     <string name="menu_detail">Detail</string>
     <string name="menu_favorite">Favorite</string>
     <string name="menu_about">About</string>
+
+    <plurals name="generation">
+        <item quantity="one">%dst Generation</item>
+        <item quantity="two">%dnd Generation</item>
+        <item quantity="few">%drd Generation</item>
+        <item quantity="other">%dth Generation</item>
+    </plurals>
 </resources>
