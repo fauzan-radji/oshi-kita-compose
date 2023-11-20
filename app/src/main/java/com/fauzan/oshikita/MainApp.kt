@@ -3,9 +3,12 @@ package com.fauzan.oshikita
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
+import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.FloatingActionButton
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -61,6 +64,16 @@ fun MainApp(
                     navController = navController,
                     navigationItems = navigationItems
                 )
+            }
+        },
+        floatingActionButton = {
+            if (currentRoute == Screen.Detail.route) {
+                FloatingActionButton(onClick = { /*TODO*/ }) {
+                    Icon(
+                        imageVector = Icons.Default.FavoriteBorder,
+                        contentDescription = stringResource(id = R.string.add_to_my_oshi)
+                    )
+                }
             }
         },
         modifier = modifier,

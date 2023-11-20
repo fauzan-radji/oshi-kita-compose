@@ -16,6 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.pluralStringResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -92,11 +93,13 @@ fun DetailContent(
             .padding(16.dp)
     ) {
         Text(
-            text = "JKT48 ${pluralStringResource(
-                id = R.plurals.generation,
-                count = generation,
-                generation
-            )}",
+            text = stringResource(
+                R.string.jkt48, pluralStringResource(
+                    id = R.plurals.generation,
+                    count = generation,
+                    generation
+                )
+            ),
             style = MaterialTheme.typography.titleLarge.copy(
                 fontWeight = FontWeight.Bold
             )
@@ -122,7 +125,7 @@ fun DetailContent(
 
             Column(modifier = Modifier.weight(1f)) {
                 Text(
-                    text = "Full Name",
+                    text = stringResource(R.string.full_name),
                     style = textStyle
                 )
                 Text(text = name)
@@ -130,7 +133,7 @@ fun DetailContent(
                 Spacer(modifier = Modifier.size(16.dp))
 
                 Text(
-                    text = "Nickname",
+                    text = stringResource(R.string.nickname),
                     style = textStyle
                 )
                 Text(text = nicknames.joinToString(", "))
@@ -138,7 +141,7 @@ fun DetailContent(
                 Spacer(modifier = Modifier.size(16.dp))
 
                 Text(
-                    text = "Fanbase",
+                    text = stringResource(R.string.fanbase),
                     style = textStyle
                 )
                 Text(text = fanbase)

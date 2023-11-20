@@ -1,9 +1,14 @@
 package com.fauzan.oshikita.ui.component
 
 import androidx.compose.foundation.layout.aspectRatio
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.FavoriteBorder
+import androidx.compose.material3.Button
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedCard
 import androidx.compose.material3.Text
@@ -12,6 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.pluralStringResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
@@ -27,9 +33,9 @@ fun MemberCard(
     generation: Int,
     modifier: Modifier = Modifier
 ) {
+    val padding = 16.dp
     OutlinedCard(
         modifier = modifier
-            .fillMaxSize()
     ) {
         AsyncImage(
             model = photoUrl,
@@ -39,6 +45,7 @@ fun MemberCard(
                 .fillMaxWidth()
                 .aspectRatio(5f / 6f)
                 .clip(Shapes.medium)
+                .padding(bottom = padding)
         )
         Text(
             text = name,
@@ -48,7 +55,7 @@ fun MemberCard(
                 fontWeight = FontWeight.ExtraBold
             ),
             modifier = Modifier
-                .padding(top = 8.dp, start = 16.dp, end = 16.dp)
+                .padding(horizontal = padding)
         )
 
         Text(
@@ -60,8 +67,22 @@ fun MemberCard(
             style = MaterialTheme.typography.titleSmall,
             color = MaterialTheme.colorScheme.secondary,
             modifier = Modifier
-                .padding(bottom = 8.dp, start = 16.dp, end = 16.dp)
+                .padding(horizontal = padding)
         )
+
+        Button(
+            onClick = { /*TODO*/ },
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(48.dp)
+                .padding(8.dp)
+        ) {
+            Icon(
+                imageVector = Icons.Outlined.FavoriteBorder,
+                contentDescription = stringResource(R.string.add_to_my_oshi),
+                modifier = Modifier.size(16.dp)
+            )
+        }
     }
 }
 
