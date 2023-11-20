@@ -1,4 +1,4 @@
-package com.fauzan.oshikita.ui.screen
+package com.fauzan.oshikita.ui.screen.favorite
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -12,7 +12,7 @@ fun FavoriteScreen(
     modifier: Modifier = Modifier,
 ) {
     Box(
-        modifier = Modifier.fillMaxSize(),
+        modifier = modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
     ) {
         Text(text = "Favorite Screen")

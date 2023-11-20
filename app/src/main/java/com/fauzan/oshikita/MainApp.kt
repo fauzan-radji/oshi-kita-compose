@@ -23,8 +23,8 @@ import com.fauzan.oshikita.navigation.NavArg
 import com.fauzan.oshikita.navigation.Screen
 import com.fauzan.oshikita.ui.component.BottomBar
 import com.fauzan.oshikita.ui.screen.about.AboutScreen
-import com.fauzan.oshikita.ui.screen.FavoriteScreen
 import com.fauzan.oshikita.ui.screen.detail.DetailScreen
+import com.fauzan.oshikita.ui.screen.favorite.FavoriteScreen
 import com.fauzan.oshikita.ui.screen.home.HomeScreen
 
 @OptIn(ExperimentalMaterial3Api::class)
