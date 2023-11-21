@@ -24,6 +24,18 @@ class Repository {
         return flowOf(members.first { it.id == id })
     }
 
+    fun setOshi(id: Int, value: Boolean): Flow<Boolean> {
+        val index = members.indexOfFirst { it.id == id }
+        if (index >= 0) {
+            val member = members[index]
+            members[index] = member.copy(isOshi = value)
+
+            return flowOf(true)
+        }
+
+        return flowOf(false)
+    }
+
     companion object {
         @Volatile
         private var instance: Repository? = null

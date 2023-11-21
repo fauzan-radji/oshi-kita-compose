@@ -6,7 +6,8 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.FavoriteBorder
+import androidx.compose.material.icons.filled.Favorite
+import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -28,9 +29,12 @@ import com.fauzan.oshikita.ui.theme.Shapes
 
 @Composable
 fun MemberCard(
+    id: Int,
     photoUrl: String,
     name: String,
     generation: Int,
+    isOshi: Boolean,
+    addToOshi: (id: Int, value: Boolean) -> Unit,
     modifier: Modifier = Modifier
 ) {
     val padding = 16.dp
@@ -71,14 +75,14 @@ fun MemberCard(
         )
 
         Button(
-            onClick = { /*TODO*/ },
+            onClick = { addToOshi(id, !isOshi) },
             modifier = Modifier
                 .fillMaxWidth()
                 .height(48.dp)
                 .padding(8.dp)
         ) {
             Icon(
-                imageVector = Icons.Outlined.FavoriteBorder,
+                imageVector = if (isOshi) Icons.Default.Favorite else Icons.Default.FavoriteBorder,
                 contentDescription = stringResource(R.string.add_to_my_oshi),
                 modifier = Modifier.size(16.dp)
             )
@@ -90,8 +94,11 @@ fun MemberCard(
 @Composable
 fun MemberCardPreview() {
     MemberCard(
+        id = 1,
         photoUrl = "https://avatars.githubusercontent.com/u/72055502?v=4",
         name = "Fauzan",
-        generation = 1
+        generation = 1,
+        isOshi = false,
+        addToOshi = {_, _ -> }
     )
 }

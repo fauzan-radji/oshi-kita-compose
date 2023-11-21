@@ -11,9 +11,11 @@ import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -21,12 +23,15 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.fauzan.oshikita.di.Injection
 import com.fauzan.oshikita.model.NavigationItem
 import com.fauzan.oshikita.navigation.NavArg
 import com.fauzan.oshikita.navigation.Screen
+import com.fauzan.oshikita.ui.ViewModelFactory
 import com.fauzan.oshikita.ui.component.BottomBar
 import com.fauzan.oshikita.ui.screen.about.AboutScreen
 import com.fauzan.oshikita.ui.screen.detail.DetailScreen
+import com.fauzan.oshikita.ui.screen.detail.DetailViewModel
 import com.fauzan.oshikita.ui.screen.favorite.FavoriteScreen
 import com.fauzan.oshikita.ui.screen.home.HomeScreen
 
@@ -68,11 +73,19 @@ fun MainApp(
         },
         floatingActionButton = {
             if (currentRoute == Screen.Detail.route) {
-                FloatingActionButton(onClick = { /*TODO*/ }) {
-                    Icon(
-                        imageVector = Icons.Default.FavoriteBorder,
-                        contentDescription = stringResource(id = R.string.add_to_my_oshi)
-                    )
+                val detailViewModel: DetailViewModel = viewModel(
+                    factory = ViewModelFactory(Injection.provideRepository())
+                )
+                val memberId = navBackStackEntry?.arguments?.getInt(NavArg.MEMBER_ID.key) ?: -1
+                detailViewModel.oshiState(memberId).collectAsState().value.let { oshiState ->
+                        FloatingActionButton(onClick = {
+                            detailViewModel.setOshi(memberId, !oshiState)
+                        }) {
+                            Icon(
+                                imageVector = if (oshiState) Icons.Default.Favorite else Icons.Default.FavoriteBorder,
+                                contentDescription = stringResource(id = R.string.add_to_my_oshi)
+                            )
+                        }
                 }
             }
         },

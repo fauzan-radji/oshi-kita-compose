@@ -9,4 +9,5 @@ data class Member(
     val jiko: String,
     val description: String,
     val photoUrl: String,
+    var isOshi: Boolean = false
 )
