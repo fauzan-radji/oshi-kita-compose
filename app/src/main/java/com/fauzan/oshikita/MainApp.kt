@@ -1,7 +1,9 @@
 package com.fauzan.oshikita
 
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material.icons.filled.Home
@@ -9,11 +11,13 @@ import androidx.compose.material.icons.filled.Person
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
@@ -28,6 +32,7 @@ import com.fauzan.oshikita.navigation.NavArg
 import com.fauzan.oshikita.navigation.Screen
 import com.fauzan.oshikita.ui.ViewModelFactory
 import com.fauzan.oshikita.ui.component.BottomBar
+import com.fauzan.oshikita.ui.component.TopBar
 import com.fauzan.oshikita.ui.screen.about.AboutScreen
 import com.fauzan.oshikita.ui.screen.detail.DetailScreen
 import com.fauzan.oshikita.ui.screen.detail.DetailViewModel
@@ -56,7 +61,7 @@ fun MainApp(
             screen = Screen.Home,
         ),
         NavigationItem(
-            title = stringResource(id = R.string.menu_favorite),
+            title = stringResource(id = R.string.menu_oshi),
             icon = Icons.Default.Favorite,
             screen = Screen.Favorite,
         ),
@@ -68,6 +73,38 @@ fun MainApp(
     )
 
     Scaffold(
+        topBar = {
+            Box {
+                TopBar(
+                    leadingIcon = {
+                        if(currentRoute == Screen.Detail.route) {
+                            Icon(
+                                imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                                contentDescription = stringResource(R.string.navigate_back)
+                            )
+                        }
+                    },
+                    leadingIconOnClick = {
+                        if(currentRoute == Screen.Detail.route) {
+                            navController.navigateUp()
+                        }
+                    }
+                ) {
+                    Text(
+                        text =
+                        when (currentRoute) {
+                            Screen.Home.route -> stringResource(id = R.string.menu_home)
+                            Screen.Detail.route -> stringResource(id = R.string.menu_detail)
+                            Screen.Favorite.route -> stringResource(id = R.string.menu_oshi)
+                            Screen.About.route -> stringResource(id = R.string.menu_about)
+                            else -> stringResource(id = R.string.app_name)
+                        },
+                        maxLines = 1,
+                        overflow = TextOverflow.Ellipsis
+                    )
+                }
+            }
+        },
         bottomBar = {
             if(currentRoute != Screen.Detail.route) {
                 BottomBar(

@@ -127,7 +127,17 @@ object FakeDataSource {
             photoUrl = "https://jkt48.com/profile/freya_jayawardana.jpg?v=20230116",
             isOshi = true
         ),
-        // Ela
+        Member(
+            id = 13,
+            name = "Gabriela Abigail Mewengkang",
+            nicknames = listOf("Ella", "Ellay"),
+            fanbase = "Ellatheria",
+            generation = 10,
+            jiko = "Ohayo! Konnichiwa! Oyasumi! Aku ingin ada di setiap harimu.",
+            description = "Gabriela Abigail Mewengkang (lahir 7 Agustus 2006) atau yang lebih akrab dipanggil Ella JKT48, adalah salah seorang anggota member JKT48 generasi sepuluh. Ia debut dan diperkenalkan menjadi member generasi ke sepuluh bersama 7 member lainnya pada Sabtu, 18 Desember 2021 setelah sempat tertunda dikarenakan kondisi yang tidak memungkinan saat itu. Ella juga memiliki darah orang Manado Sulawesi Utara.",
+            photoUrl = "https://jkt48.com/profile/gabriela_abigail.jpg?v=20230531",
+            isOshi = true
+        ),
         Member(
             id = 14,
             name = "Gita Sekar Andarini",

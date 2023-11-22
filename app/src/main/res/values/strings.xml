@@ -2,7 +2,7 @@
     <string name="app_name">Oshi Kita</string>
     <string name="menu_home">Home</string>
     <string name="menu_detail">Detail</string>
-    <string name="menu_favorite">Favorite</string>
+    <string name="menu_oshi">My Oshi</string>
     <string name="menu_about">About</string>
     <string name="add_to_my_oshi">Add to my Oshi</string>
     <string name="fanbase">Fanbase</string>
@@ -13,6 +13,7 @@
     <string name="my_email">triputrafauzan@gmail.com</string>
     <string name="no_data_found">No data found</string>
     <string name="search_your_oshi">Search your oshi</string>
+    <string name="navigate_back">Navigate back</string>
 
     <plurals name="generation">
         <item quantity="one">%dst Generation</item>
