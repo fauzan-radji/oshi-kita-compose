@@ -14,6 +14,10 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedCard
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
@@ -37,6 +41,8 @@ fun MemberCard(
     addToOshi: (id: Int, value: Boolean) -> Unit,
     modifier: Modifier = Modifier
 ) {
+    var isFavorite by remember { mutableStateOf(isOshi) }
+
     val padding = 16.dp
     OutlinedCard(
         modifier = modifier
@@ -75,14 +81,17 @@ fun MemberCard(
         )
 
         Button(
-            onClick = { addToOshi(id, !isOshi) },
+            onClick = {
+                addToOshi(id, !isOshi)
+                isFavorite = !isFavorite
+            },
             modifier = Modifier
                 .fillMaxWidth()
                 .height(48.dp)
                 .padding(8.dp)
         ) {
             Icon(
-                imageVector = if (isOshi) Icons.Default.Favorite else Icons.Default.FavoriteBorder,
+                imageVector = if (isFavorite) Icons.Default.Favorite else Icons.Default.FavoriteBorder,
                 contentDescription = stringResource(R.string.add_to_my_oshi),
                 modifier = Modifier.size(16.dp)
             )

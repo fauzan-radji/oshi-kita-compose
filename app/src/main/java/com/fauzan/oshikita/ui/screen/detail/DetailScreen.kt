@@ -15,6 +15,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
@@ -31,48 +32,28 @@ import coil.compose.AsyncImage
 import com.fauzan.oshikita.R
 import com.fauzan.oshikita.di.Injection
 import com.fauzan.oshikita.ui.ViewModelFactory
-import com.fauzan.oshikita.ui.common.UiState
 import com.fauzan.oshikita.ui.theme.OshiKitaTheme
 
 @Composable
 fun DetailScreen(
     modifier: Modifier = Modifier,
-    memberId: Int,
     viewModel: DetailViewModel = viewModel(
         factory = ViewModelFactory(Injection.provideRepository())
     ),
 ) {
-    viewModel.uiState.collectAsState(initial = UiState.Loading).value.let { uiState ->
-        when (uiState) {
-            is UiState.Loading -> {
-                viewModel.getMemberById(memberId)
-            }
+    val member by viewModel.member.collectAsState()
 
-            is UiState.Success -> {
-                val (
-                    _,
-                    name,
-                    nicknames,
-                    fanbase,
-                    generation,
-                    jiko,
-                    description,
-                    photoUrl
-                ) = uiState.data
-                DetailContent(
-                    name = name,
-                    nicknames = nicknames,
-                    fanbase = fanbase,
-                    generation = generation,
-                    jiko = jiko,
-                    description = description,
-                    photoUrl = photoUrl,
-                    modifier = modifier
-                )
-            }
-
-            is UiState.Error -> {}
-        }
+    member?.let {
+        DetailContent(
+            name = it.name,
+            nicknames = it.nicknames,
+            fanbase = it.fanbase,
+            generation = it.generation,
+            jiko = it.jiko,
+            description = it.description,
+            photoUrl = it.photoUrl,
+            modifier = modifier
+        )
     }
 }
 

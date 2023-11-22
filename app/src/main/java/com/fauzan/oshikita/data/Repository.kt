@@ -1,8 +1,6 @@
 package com.fauzan.oshikita.data
 
 import com.fauzan.oshikita.model.Member
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flowOf
 
 class Repository {
 
@@ -16,24 +14,13 @@ class Repository {
         }
     }
 
-    fun getAllMember(): Flow<List<Member>> {
-        return flowOf(members)
-    }
+    fun getAllMember(): List<Member> = members
+    fun getMemberById(id: Int): Member = members.first { it.id == id }
+    fun getOshi(): List<Member> = members.filter { it.isOshi }
 
-    fun getMemberById(id: Int): Flow<Member> {
-        return flowOf(members.first { it.id == id })
-    }
-
-    fun setOshi(id: Int, value: Boolean): Flow<Boolean> {
+    fun setOshi(id: Int, value: Boolean) {
         val index = members.indexOfFirst { it.id == id }
-        if (index >= 0) {
-            val member = members[index]
-            members[index] = member.copy(isOshi = value)
-
-            return flowOf(true)
-        }
-
-        return flowOf(false)
+        members[index] = members[index].copy(isOshi = value)
     }
 
     companion object {

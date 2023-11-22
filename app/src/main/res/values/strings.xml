@@ -11,6 +11,7 @@
     <string name="jkt48">JKT48 %1$s</string>
     <string name="my_name">Tri Putra Fauzan H. Radji</string>
     <string name="my_email">triputrafauzan@gmail.com</string>
+    <string name="no_data_found">No data found</string>
 
     <plurals name="generation">
         <item quantity="one">%dst Generation</item>

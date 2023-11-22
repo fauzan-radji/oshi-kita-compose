@@ -14,7 +14,16 @@ object FakeDataSource {
             description = "Adzana Shaliha atau akrab dipanggil Ashel ini merupakan anggota JKT48 dari generasi kesembilan. Ashel adalah keponakan dari basis Slank, Ivanka. Gadis yang mempunyai hobi senam ini juga pernah menjadi pemandu sorak. Ashel pertama kali diperkenalkan sebagai member JKT48 pada acara Joy Kick! Tears Handshake Festival pada 1 Desember 2019. Setelah melalui tes tahap pertama dan tahap kedua sebagai syarat kenaikan kelas, Ashel dipromosikan ke Akademi Kelas A pada tanggal 25 Januari 2020. Pada 12 Maret 2021 ia dipromosikan ke tim utama JKT48.",
             photoUrl = "https://jkt48.com/profile/adzana_shaliha.jpg?v=20230116"
         ),
-        // Amanda Sukma
+        Member(
+            id = 2,
+            name = "Amanda Puspita Sukma Mulyadewi",
+            nicknames = listOf("Amanda", "Manda", "Mandut"),
+            fanbase = "Mandaffection",
+            generation = 10,
+            jiko = "Melaju cepat bagai motor 1000cc! Aku si gadis penyuka motor.",
+            description = "Amanda Puspita Sukma Mulyadewi (lahir 17 Desember 2004), juga dikenal sebagai Amanda JKT48, adalah seorang penyanyi Indonesia dan anggota grup idola JKT48. Ia merupakan anggota generasi kesepuluh JKT48.",
+            photoUrl = "https://jkt48.com/profile/amanda_sukma.jpg?v=20230530"
+        ),
         Member(
             id = 3,
             name = "Angelina Christy",
@@ -45,7 +54,16 @@ object FakeDataSource {
             description = "Azizi Shafaa Asadel (lahir 16 Mei 2004), dikenal dengan nama mononim Zee JKT48, adalah seorang penyanyi dan aktris asal Indonesia yang tergabung sebagai anggota grup idola JKT48. Ia merupakan anggota generasi ketujuh JKT48 yang diperkenalkan pada 29 September 2018.",
             photoUrl = "https://jkt48.com/profile/azizi_asadel.jpg?v=20230116"
         ),
-        // Callie
+        Member(
+            id = 6,
+            name = "Callista Alifia Wardhana",
+            nicknames = listOf("Callie", "Keli", "Tata"),
+            fanbase = "Callistavers",
+            generation = 10,
+            jiko = "Si beruang madu, penyuka madu!",
+            description = "Callista Alifia Wardhana (lahir 8 Agustus 2005), juga dikenal sebagai Callie JKT48, adalah seorang penyanyi Indonesia dan anggota grup idola JKT48. Ia merupakan anggota generasi kesepuluh JKT48.[1] Jikoshoukai atau salam perkenalan Callie adalah \"Si beruang madu, penyuka madu!\". Callie memiliki basis penggemar yang disebut Callistavers.",
+            photoUrl = "https://jkt48.com/profile/callista_alifia.jpg?v=20230531"
+        ),
         Member(
             id = 7,
             name = "Cornelia Vanisa",
@@ -54,7 +72,8 @@ object FakeDataSource {
             generation = 8,
             jiko = "Seperti teka teki kalian akan selalu penasaran denganku, halo aku Oniel!",
             description = "Cornelia Syafa Vanisa (lahir di Tangerang, 26 Juli 2002) yang biasa dipanggil Oniel (juga dikenal sebagai Oniel JKT48 (selama menjadi anggota JKT48) adalah salah seorang penyanyi Indonesia, model dan anggota JKT48 yang berasal dari Jakarta, Indonesia. Oniel merupakan anggota JKT48 generasi kedelapan yang diperkenalkan pada 27 April 2019.",
-            photoUrl = "https://jkt48.com/profile/cornelia_vanisa.jpg?v=20230116"
+            photoUrl = "https://jkt48.com/profile/cornelia_vanisa.jpg?v=20230116",
+            isOshi = true
         ),
         // Ola
         // Feni
@@ -75,9 +94,10 @@ object FakeDataSource {
             nicknames = listOf("Freya", "Fre", "Nunung", "Nurdana"),
             fanbase = "Freyanation",
             generation = 7,
-            jiko = "Gadis koleris yang suka berimajinasi, terangi harimu dengan senyuman karamelku. Halo aku Freya!",
+            jiko = "Gadis koleris yang suka berimajinasi, terangi harimu dengan senyum karamelku. Halo aku Freya!",
             description = "Raden Roro Freyanashifa Jayawardana (Jawa: ꦬꦢꦺꦤ꧀ꦬꦫ ꦦ꦳ꦿꦺꦪꦤꦯꦶꦥ꦳ꦗꦪꦮꦂꦝꦤ; pengucapan bahasa Jawa: [Radèn Rårå Frèyanaśifajåyåwardhånå]; lahir 13 Februari 2006), secara mononim dikenal sebagai Freya JKT48, adalah penyanyi dan penari asal Indonesia dan anggota grup idola JKT48 generasi ketujuh yang diperkenalkan pada 2018.",
-            photoUrl = "https://jkt48.com/profile/freya_jayawardana.jpg?v=20230116"
+            photoUrl = "https://jkt48.com/profile/freya_jayawardana.jpg?v=20230116",
+            isOshi = true
         ),
         // Ela
         Member(
@@ -117,7 +137,8 @@ object FakeDataSource {
             generation = 8,
             jiko = "Bagaikan kucing yang kalem, tapi selalu memikat hati kamu! Hai aku Adel.",
             description = "Reva Fidela Adel Pantjoro (lahir di Jakarta, 14 Juli 2006) yang biasa dipanggil Adel atau Reva (juga dikenal sebagai Adel JKT48 (selama menjadi anggota JKT48) adalah salah seorang penyanyi Indonesia dan anggota JKT48 yang berasal dari Jakarta, Indonesia. Adel merupakan anggota JKT48 generasi ke-8 yang diperkenalkan pada 27 April 2019. Jikoshoukai atau salam perkenalannya adalah \"Bagai kucing yang kalem, tapi selalu memikat hati kamu, hai aku Adel\"",
-            photoUrl = "https://jkt48.com/profile/reva_fidela.jpg?v=20230116"
+            photoUrl = "https://jkt48.com/profile/reva_fidela.jpg?v=20230116",
+            isOshi = true
         ),
         Member(
             id = 26,
