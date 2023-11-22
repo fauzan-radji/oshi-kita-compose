@@ -23,6 +23,35 @@ class Repository {
         members[index] = members[index].copy(isOshi = value)
     }
 
+    fun searchMember(query: String): List<Member> {
+        return if (query.isEmpty()) {
+            members
+        } else {
+            members.filter {
+                it.name.contains(query, ignoreCase = true) ||
+                it.nicknames.any { it.contains(query, ignoreCase = true) } ||
+                it.fanbase.contains(query, ignoreCase = true) ||
+                it.jiko.contains(query, ignoreCase = true)
+            }
+        }
+    }
+
+    fun searchOshi(query: String): List<Member> {
+        return if (query.isEmpty()) {
+            members.filter { it.isOshi }
+        } else {
+            members.filter {
+                it.isOshi &&
+                (
+                    it.name.contains(query, ignoreCase = true) ||
+                    it.nicknames.any { it.contains(query, ignoreCase = true) } ||
+                    it.fanbase.contains(query, ignoreCase = true) ||
+                    it.jiko.contains(query, ignoreCase = true)
+                )
+            }
+        }
+    }
+
     companion object {
         @Volatile
         private var instance: Repository? = null

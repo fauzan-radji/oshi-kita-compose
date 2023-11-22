@@ -1,5 +1,8 @@
 package com.fauzan.oshikita.ui.screen.favorite
 
+import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.State
+import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import com.fauzan.oshikita.data.Repository
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -11,12 +14,20 @@ class FavoriteViewModel(private val repository: Repository) : ViewModel() {
     )
     val oshi = _oshi.asStateFlow()
 
+    val _query: MutableState<String> = mutableStateOf("")
+    val query: State<String> get() = _query
+
     fun getOshi() {
-        _oshi.value = repository.getOshi()
+        setQuery("")
     }
 
     fun setOshi(id: Int, value: Boolean) {
         repository.setOshi(id, value)
         _oshi.value = repository.getOshi()
+    }
+
+    fun setQuery(query: String) {
+        _query.value = query
+        _oshi.value = repository.searchOshi(query)
     }
 }
