@@ -9,9 +9,10 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material3.Button
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedCard
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -44,7 +45,10 @@ fun MemberCard(
     var isFavorite by remember { mutableStateOf(isOshi) }
 
     val padding = 16.dp
-    OutlinedCard(
+    Card(
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.surface,
+        ),
         modifier = modifier
     ) {
         AsyncImage(
@@ -57,6 +61,7 @@ fun MemberCard(
                 .clip(Shapes.medium)
                 .padding(bottom = padding)
         )
+
         Text(
             text = name,
             maxLines = 1,
@@ -75,7 +80,7 @@ fun MemberCard(
                 generation
             ),
             style = MaterialTheme.typography.titleSmall,
-            color = MaterialTheme.colorScheme.secondary,
+            color = MaterialTheme.colorScheme.primary,
             modifier = Modifier
                 .padding(horizontal = padding)
         )

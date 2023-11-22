@@ -75,8 +75,26 @@ object FakeDataSource {
             photoUrl = "https://jkt48.com/profile/cornelia_vanisa.jpg?v=20230116",
             isOshi = true
         ),
-        // Ola
-        // Feni
+        Member(
+            id = 8,
+            name = "Febriola Sinambela",
+            nicknames = listOf("Olla", "Olla JKT48", "Chef Olla"),
+            fanbase = "Oracle (Olla The Miracle)",
+            generation = 7,
+            jiko = "Dengan keajaibanku aku akan selalu membuat kalian tertawa, halo semuanya aku Olla",
+            description = "Febriola Sinambela (lahir 26 Februari 2005), juga dikenal sebagai Olla JKT48, adalah salah seorang penyanyi Indonesia dan anggota JKT48 yang berasal dari Jakarta, Indonesia. Olla merupakan anggota JKT48 generasi ketujuh yang diperkenalkan pada 2018.",
+            photoUrl = "https://jkt48.com/profile/febriola_sinambela.jpg?v=20230116"
+        ),
+        Member(
+            id = 9,
+            name = "Feni Fitriyanti",
+            nicknames = listOf("Feni", "Mpen"),
+            fanbase = "Fenidelity",
+            generation = 3,
+            jiko = "Matahari yang indah, yang akan memberikan kehangatan di setiap harinya. Halo Aku Feni!",
+            description = "Feni Fitriyanti (lahir 16 Januari 1999) juga dikenal sebagai Feni JKT48 adalah salah seorang penyanyi Indonesia dan anggota grup idola JKT48 generasi ketiga. Feni juga dulunya merangkap sebagai anggota sub-unit 4 Gulali. Ia sangat terkenal dengan sikap ceria dan imut, tetapi penuh energi dan berkarisma di atas panggung. Rambut Feni yang diwarnai blonde saat ini menjadi ciri khasnya karena sangat mencolok di antara rambut anggota JKT48 lainnya. Saat ini Feni, tergabung dengan JKT48 New Era sebagai salah satu senior kebanggaan JKT48.",
+            photoUrl = "https://jkt48.com/profile/feni_fitriyanti.jpg?v=20230116"
+        ),
         Member(
             id = 10,
             name = "Fiony Alveria Tantri",
@@ -87,7 +105,17 @@ object FakeDataSource {
             description = "Fiony Alveria Tantri (lahir 4 Februari 2002), juga dikenal sebagai Fiony JKT48, adalah seorang penyanyi Indonesia dan anggota grup idola JKT48. Ia dikenal juga sebagai salah satu pelawak di JKT48 dikarenakan sifatnya. Ia juga terkenal dengan trio ubur-ubur bersama Zee dan Christy. Trio ini terkenal akan ilmu \"filsuf\" atau pertanyaan yang tak bisa dijawab dan random. Ia juga dijuluki random sebab tingkah lakunya yang tak masuk akal. Ia dan Freya sering dijuluki duo F. Ia dan Freya sering melakukan hal-hal lucu dan kocak. Diketahui, Ia kuliah di salah satu universitas di Jakarta dengan jurusan Desain Komunikasi Visual. Ia merupakan anggota generasi kedelapan JKT48 yang diperkenalkan pada 27 April 2019. Walaupun ia adalah gen kedelapan, ia sering disebut gen 7,5 sebab dekat dan menjadi salah satu center di formasi JKT48 New Era.",
             photoUrl = "https://jkt48.com/profile/fiony_alveria.jpg?v=20230116"
         ),
-        // Flora
+        Member(
+            id = 11,
+            name = "Flora Shafiqa",
+            nicknames = listOf("Flora"),
+            fanbase = "FloRisen",
+            generation = 8,
+            jiko = "Ada yang mau ikut aku? Ayo ikut ke dunia Flora, simsalabim akan ku buat kamu, jadi berbunga-bunga. Halo, aku Flora!",
+            description = "Flora Shafiqa (lahir di Tangerang, 4 April 2005) yang biasa dipanggil Flora (juga dikenal sebagai Flora JKT48 (selama menjadi anggota JKT48) adalah salah seorang penyanyi Indonesia dan anggota JKT48 yang berasal dari Jakarta, Indonesia. Flora merupakan anggota JKT48 generasi kedelapan yang diperkenalkan pada 27 April 2019.",
+            photoUrl = "https://jkt48.com/profile/flora_shafiq.jpg?v=20230116",
+            isOshi = true
+        ),
         Member(
             id = 12,
             name = "Raden Roro Freyanashifa Jayawardana",

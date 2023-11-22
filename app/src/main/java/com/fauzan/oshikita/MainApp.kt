@@ -6,7 +6,6 @@ import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Person
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
@@ -37,7 +36,6 @@ import com.fauzan.oshikita.ui.screen.favorite.FavoriteViewModel
 import com.fauzan.oshikita.ui.screen.home.HomeScreen
 import com.fauzan.oshikita.ui.screen.home.HomeViewModel
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainApp(
     modifier: Modifier = Modifier,
@@ -97,6 +95,7 @@ fun MainApp(
         val navigateToDetail = { id: Int ->
             navController.navigate(Screen.Detail.createRoute(id))
         }
+
         NavHost(
             navController = navController,
             startDestination = Screen.Home.route,

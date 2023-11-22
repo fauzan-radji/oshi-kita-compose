@@ -49,9 +49,7 @@ fun MemberGrid(
                     generation = member.generation,
                     isOshi = member.isOshi,
                     addToOshi = addToOshi,
-                    modifier = Modifier.clickable {
-                        navigateToDetail(member.id)
-                    }
+                    modifier = Modifier.clickable{ navigateToDetail(member.id) }
                 )
             }
         }

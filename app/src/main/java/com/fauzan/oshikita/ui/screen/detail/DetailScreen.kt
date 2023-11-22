@@ -1,6 +1,5 @@
 package com.fauzan.oshikita.ui.screen.detail
 
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -18,9 +17,11 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -68,10 +69,6 @@ fun DetailContent(
     photoUrl: String,
     modifier: Modifier = Modifier,
 ) {
-    val textStyle = MaterialTheme.typography.titleMedium.copy(
-        fontWeight = FontWeight.Bold
-    )
-
     Column(
         modifier = modifier
             .fillMaxSize()
@@ -100,36 +97,22 @@ fun DetailContent(
                     .weight(1f)
                     .aspectRatio(2f / 3f)
                     .clip(shape = MaterialTheme.shapes.medium)
-                    .border(
-                        width = 1.dp,
-                        color = MaterialTheme.colorScheme.onSurface,
-                        shape = MaterialTheme.shapes.medium
-                    )
             )
 
             Spacer(modifier = Modifier.size(16.dp))
 
             Column(modifier = Modifier.weight(1f)) {
-                Text(
-                    text = stringResource(R.string.full_name),
-                    style = textStyle
-                )
+                Title(text = stringResource(R.string.full_name))
                 Text(text = name)
 
                 Spacer(modifier = Modifier.size(16.dp))
 
-                Text(
-                    text = stringResource(R.string.nickname),
-                    style = textStyle
-                )
+                Title(text = stringResource(R.string.nickname))
                 Text(text = nicknames.joinToString(", "))
 
                 Spacer(modifier = Modifier.size(16.dp))
 
-                Text(
-                    text = stringResource(R.string.fanbase),
-                    style = textStyle
-                )
+                Title(text = stringResource(R.string.fanbase))
                 Text(text = fanbase)
             }
         }
@@ -143,8 +126,28 @@ fun DetailContent(
             modifier = Modifier.fillMaxWidth()
         )
         Spacer(modifier = Modifier.size(16.dp))
-        Text(description)
+        Text(
+            text = description,
+            modifier = modifier.padding(bottom = 64.dp)
+        )
     }
+}
+
+@Composable
+fun Title(
+    text: String,
+    modifier: Modifier = Modifier,
+    style: TextStyle = MaterialTheme.typography.titleMedium.copy(
+        fontWeight = FontWeight.Bold
+    ),
+    color: Color = MaterialTheme.colorScheme.primary,
+) {
+    Text(
+        text = text,
+        color = color,
+        style = style,
+        modifier = modifier
+    )
 }
 
 @Preview(showBackground = true, device = Devices.PIXEL_4, showSystemUi = true)

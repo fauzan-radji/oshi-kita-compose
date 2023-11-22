@@ -1,8 +1,10 @@
 package com.fauzan.oshikita.ui.component
 
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
+import androidx.compose.material3.NavigationBarItemDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -44,7 +46,14 @@ fun BottomBar(
                 },
                 label = {
                     Text(text = item.title)
-                }
+                },
+                colors = NavigationBarItemDefaults.colors(
+                    selectedIconColor = MaterialTheme.colorScheme.onPrimary,
+                    selectedTextColor = MaterialTheme.colorScheme.primary,
+                    unselectedIconColor = MaterialTheme.colorScheme.onBackground,
+                    unselectedTextColor = MaterialTheme.colorScheme.onBackground,
+                    indicatorColor = MaterialTheme.colorScheme.primary
+                )
             )
         }
     }
