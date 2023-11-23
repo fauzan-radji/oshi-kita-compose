@@ -78,7 +78,7 @@ object FakeDataSource {
         Member(
             id = 8,
             name = "Febriola Sinambela",
-            nicknames = listOf("Olla", "Olla JKT48", "Chef Olla"),
+            nicknames = listOf("Olla", "Chef Olla"),
             fanbase = "Oracle (Olla The Miracle)",
             generation = 7,
             jiko = "Dengan keajaibanku aku akan selalu membuat kalian tertawa, halo semuanya aku Olla",
@@ -148,12 +148,41 @@ object FakeDataSource {
             description = "Gita Sekar Andarini (lahir 30 Juni 2001) yang dipanggil Gita (juga dikenal sebagai Gita JKT48) adalah salah seorang penyanyi Indonesia dan anggota dari grup idola JKT48[1] Jikoushokai (salam perkenalan) dari Gita di JKT48 adalah \"Diam bukan berarti tidak memperhatikanmu, aku Gita!\". Gita memiliki basis penggemar yang disebut Gitroops.",
             photoUrl = "https://jkt48.com/profile/gita_sekar_andarini.jpg?v=20230116"
         ),
-        // Ceu Eli
+        Member(
+            id = 15,
+            name = "Helisma Mauludzunia Putri Kurnia",
+            nicknames = listOf("Eli", "Ceu Eli"),
+            fanbase = "Helismiley",
+            generation = 7,
+            jiko = "Aprikot aprikot aprikot aprikot, pang! Dengan energi kegembiraanku aku akan menghangatkan suasana. Halo halo aku Ceu Eli!",
+            description = "Helisma Mauludzunia Putri Kurnia (lahir di Bandung, 15 Juni 2000) yang akrab dipanggil Eli atau Ceu Eli adalah seorang anggota grup idola JKT48 dari generasi ketujuh. Saat ini, Eli berada di Team KIII.",
+            photoUrl = "https://jkt48.com/profile/helisma_putri.jpg?v=20230116"
+        ),
         // Indah
-        // Indira
+        Member(
+            id = 17,
+            name = "Indira Putri Seruni",
+            nicknames = listOf("Indira", "Dira"),
+            fanbase = "Indiraise",
+            generation = 10,
+            jiko = "Watashi no kokoro unlock, akan menemani hari-harimu dengan sepenuh hati. Hai, aku Indira!",
+            description = "Indira Putri Seruni (lahir 26 April 2004) atau yang lebih akrab dipanggil Indira JKT48 adalah salah seorang anggota JKT48 generasi sepuluh. Ia debut dan diperkenalkan menjadi anggota generasi ke sepuluh bersama 7 anggota lainnya pada Sabtu, 18 Desember 2021 setelah sempat tertunda dikarenakan kondisi yang tidak memungkinan saat itu. Indira menjadi center dan ACE di generasinya. Indira juga memiliki basis penggemar (fanbase) yang disebut Indiraise.",
+            photoUrl = "https://jkt48.com/profile/indira_seruni.jpg?v=20230531",
+            isOshi = true
+        ),
         // Jessi
         // Jesslyn
-        // Atin
+        Member(
+            id = 20,
+            name = "Kathrina Irene Indarto Putri",
+            nicknames = listOf("Katrin", "Atin"),
+            fanbase = "Kathrinetizen",
+            generation = 9,
+            jiko = "Never miss a chance to be a star! Hai Semua, aku Kathrina, si seneng.",
+            description = "Kathrina merupakan salah satu anggota JKT48 generasi kesembilan. Kathrina merupakan anak ketiga dari tiga bersaudara. Salah satu kakaknya merupakan mantan anggota JKT48 generasi ketiga, yakni Stephanie Pricilla.",
+            photoUrl = "https://jkt48.com/profile/kathrina_irene.jpg?v=20230116",
+            isOshi = true
+        ),
         // Lulu
         Member(
             id = 22,

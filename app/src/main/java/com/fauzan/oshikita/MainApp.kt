@@ -1,6 +1,6 @@
 package com.fauzan.oshikita
 
-import androidx.compose.foundation.layout.Box
+import android.widget.Toast
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
@@ -8,16 +8,18 @@ import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Person
+import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.style.TextOverflow
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
@@ -32,7 +34,9 @@ import com.fauzan.oshikita.navigation.NavArg
 import com.fauzan.oshikita.navigation.Screen
 import com.fauzan.oshikita.ui.ViewModelFactory
 import com.fauzan.oshikita.ui.component.BottomBar
+import com.fauzan.oshikita.ui.component.SearchBar
 import com.fauzan.oshikita.ui.component.TopBar
+import com.fauzan.oshikita.ui.component.TopBarTitle
 import com.fauzan.oshikita.ui.screen.about.AboutScreen
 import com.fauzan.oshikita.ui.screen.detail.DetailScreen
 import com.fauzan.oshikita.ui.screen.detail.DetailViewModel
@@ -54,6 +58,9 @@ fun MainApp(
     val favoriteViewModel: FavoriteViewModel = viewModel(factory = ViewModelFactory(repository))
     val detailViewModel: DetailViewModel = viewModel(factory = ViewModelFactory(repository))
 
+    val homeQuery by homeViewModel.query
+    val favoriteQuery by favoriteViewModel.query
+
     val navigationItems = listOf(
         NavigationItem(
             title = stringResource(id = R.string.menu_home),
@@ -72,35 +79,51 @@ fun MainApp(
         )
     )
 
+    val mContext = LocalContext.current
     Scaffold(
         topBar = {
-            Box {
-                TopBar(
-                    leadingIcon = {
-                        if(currentRoute == Screen.Detail.route) {
-                            Icon(
-                                imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                                contentDescription = stringResource(R.string.navigate_back)
-                            )
-                        }
-                    },
-                    leadingIconOnClick = {
-                        if(currentRoute == Screen.Detail.route) {
-                            navController.navigateUp()
-                        }
-                    }
-                ) {
-                    Text(
-                        text =
-                        when (currentRoute) {
-                            Screen.Home.route -> stringResource(id = R.string.menu_home)
+            TopBar(
+                leadingIcon = if(currentRoute == Screen.Detail.route) ({
+                    Icon(
+                        imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                        contentDescription = stringResource(R.string.navigate_back)
+                    )
+                }) else null,
+                leadingIconOnClick = if(currentRoute == Screen.Detail.route) ({
+                    navController.popBackStack()
+                }) else ({}),
+
+                trailingIcon = {
+                    Icon(
+                        imageVector = Icons.Default.Settings,
+                        contentDescription = "Settings"
+                    )
+                },
+                trailingIconOnClick = {
+                    Toast.makeText(mContext, "Settings", Toast.LENGTH_SHORT).show()
+                },
+            ) {
+                when (currentRoute) {
+                    Screen.Home.route -> SearchBar(
+                        query = homeQuery,
+                        onQueryChange = homeViewModel::setQuery,
+                        backgroundColor = Color.Transparent,
+                        cursorColor = MaterialTheme.colorScheme.onPrimary
+                    )
+
+                    Screen.Favorite.route -> SearchBar(
+                        query = favoriteQuery,
+                        onQueryChange = favoriteViewModel::setQuery,
+                        backgroundColor = Color.Transparent,
+                        cursorColor = MaterialTheme.colorScheme.onPrimary
+                    )
+
+                    else -> TopBarTitle(
+                        text = when (currentRoute) {
                             Screen.Detail.route -> stringResource(id = R.string.menu_detail)
-                            Screen.Favorite.route -> stringResource(id = R.string.menu_oshi)
                             Screen.About.route -> stringResource(id = R.string.menu_about)
                             else -> stringResource(id = R.string.app_name)
-                        },
-                        maxLines = 1,
-                        overflow = TextOverflow.Ellipsis
+                        }
                     )
                 }
             }
