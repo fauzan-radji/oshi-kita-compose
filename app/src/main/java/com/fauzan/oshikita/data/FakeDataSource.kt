@@ -41,7 +41,7 @@ object FakeDataSource {
             fanbase = "Liamelior",
             generation = 10,
             jiko = "Si social butterfly yang energik dan periang! Aku Lia!",
-            description = "Aurellia (lahir 29 Oktober 2002)[1] atau yang lebih akrab dipanggil Lia JKT48, adalah seorang penyanyi Indonesia dan salah satu anggota member JKT48 generasi kesepuluh. Ia debut dan diperkenalkan menjadi member generasi ke sepuluh bersama 7 member lainnya pada Sabtu, 18 Desember 2021 setelah sempat tertunda dikarenakan kondisi yang tidak memungkinan saat itu.",
+            description = "Aurellia (lahir 29 Oktober 2002) atau yang lebih akrab dipanggil Lia JKT48, adalah seorang penyanyi Indonesia dan salah satu anggota member JKT48 generasi kesepuluh. Ia debut dan diperkenalkan menjadi member generasi ke sepuluh bersama 7 member lainnya pada Sabtu, 18 Desember 2021 setelah sempat tertunda dikarenakan kondisi yang tidak memungkinan saat itu.",
             photoUrl = "https://jkt48.com/profile/aurellia.jpg?v=20230531"
         ),
         Member(
@@ -61,7 +61,7 @@ object FakeDataSource {
             fanbase = "Callistavers",
             generation = 10,
             jiko = "Si beruang madu, penyuka madu!",
-            description = "Callista Alifia Wardhana (lahir 8 Agustus 2005), juga dikenal sebagai Callie JKT48, adalah seorang penyanyi Indonesia dan anggota grup idola JKT48. Ia merupakan anggota generasi kesepuluh JKT48.[1] Jikoshoukai atau salam perkenalan Callie adalah \"Si beruang madu, penyuka madu!\". Callie memiliki basis penggemar yang disebut Callistavers.",
+            description = "Callista Alifia Wardhana (lahir 8 Agustus 2005), juga dikenal sebagai Callie JKT48, adalah seorang penyanyi Indonesia dan anggota grup idola JKT48. Ia merupakan anggota generasi kesepuluh JKT48. Jikoshoukai atau salam perkenalan Callie adalah \"Si beruang madu, penyuka madu!\". Callie memiliki basis penggemar yang disebut Callistavers.",
             photoUrl = "https://jkt48.com/profile/callista_alifia.jpg?v=20230531"
         ),
         Member(
@@ -145,7 +145,7 @@ object FakeDataSource {
             fanbase = "Gitroops",
             generation = 6,
             jiko = "Diam bukan berarti tak memperhatikanmu. Aku Gita.",
-            description = "Gita Sekar Andarini (lahir 30 Juni 2001) yang dipanggil Gita (juga dikenal sebagai Gita JKT48) adalah salah seorang penyanyi Indonesia dan anggota dari grup idola JKT48[1] Jikoushokai (salam perkenalan) dari Gita di JKT48 adalah \"Diam bukan berarti tidak memperhatikanmu, aku Gita!\". Gita memiliki basis penggemar yang disebut Gitroops.",
+            description = "Gita Sekar Andarini (lahir 30 Juni 2001) yang dipanggil Gita (juga dikenal sebagai Gita JKT48) adalah salah seorang penyanyi Indonesia dan anggota dari grup idola JKT48. Jikoushokai (salam perkenalan) dari Gita di JKT48 adalah \"Diam bukan berarti tidak memperhatikanmu, aku Gita!\". Gita memiliki basis penggemar yang disebut Gitroops.",
             photoUrl = "https://jkt48.com/profile/gita_sekar_andarini.jpg?v=20230116"
         ),
         Member(
@@ -170,8 +170,26 @@ object FakeDataSource {
             photoUrl = "https://jkt48.com/profile/indira_seruni.jpg?v=20230531",
             isOshi = true
         ),
-        // Jessi
-        // Jesslyn
+        Member(
+            id = 18,
+            name = "Jessica Chandra",
+            nicknames = listOf("Jessi", "Jeci", "Jecileci"),
+            fanbase = "Jessination",
+            generation = 7,
+            jiko = "Suka menari dan akan selalu berusaha untuk menjadi sumber energimu. Perkenalkan aku Jessi.",
+            description = "Jessica Chandra (lahir 23 September 2005), juga dikenal sebagai Jessi JKT48, adalah salah seorang penyanyi Indonesia dan anggota JKT48 yang berasal dari Jakarta, Indonesia. Jessi merupakan anggota JKT48 generasi ketujuh yang diperkenalkan pada 2018.Perempuan yang memiliki kemampuan dalam hal menari ini memiliki nama Mandarian / Hokkian yakni Zheng Wei Ting.",
+            photoUrl = "https://jkt48.com/profile/jessica_chandra.jpg?v=20230116",
+        ),
+        Member(
+            id = 19,
+            name = "Jesslyn Elly Septiani",
+            nicknames = listOf("Lyn"),
+            fanbase = "Lynear",
+            generation = 10,
+            jiko = "Seperti ombak laut yang tenang, tiba-tiba aku akan menyapumu dengan banyak cinta! Aku Lyn!",
+            description = "Jesslyn Elly Septiani (lahir 13 September 2001) atau yang lebih akrab dipanggil Lyn JKT48, adalah salah seorang anggota member JKT48 generasi sepuluh. Ia debut dan diperkenalkan menjadi member generasi ke sepuluh bersama 7 member lainnya pada Sabtu, 18 Desember 2021 setelah sempat tertunda dikarenakan kondisi yang tidak memungkinan saat itu. Lyn juga memiliki basis penggemar (fanbase) yang disebut Lynear",
+            photoUrl = "https://jkt48.com/profile/jesslyn_elly.jpg?v=20230531",
+        ),
         Member(
             id = 20,
             name = "Kathrina Irene Indarto Putri",
@@ -210,7 +228,7 @@ object FakeDataSource {
             fanbase = "Muffin",
             generation = 7,
             jiko = "Dengan kelincahanku, aku akan menari setiap hari. Panggil aku Mu Mu Mu Muthe!",
-            description = "Mutiara Azzahra Umandana, kerap disapa Muthe, lahir pada 12 Juli 2004 adalah anak kedua dari dua bersaudara. Muthe sudah berkeinginan menjadi anggota JKT48 sejak kecil dan pernah berfoto di Teater JKT48 ketika berumur delapan tahun.[2]\n" + "\n" + "Di JKT48, Muthe rajin membuat vlog yang dikenal sebagai MuVlog dan beberapa video random. Muthe dan Angelina Christy memiliki kedekatan yang dikenal sebagai Musty. Muthe adalah anak dari Keluarga Cangcorang, yang terdiri dari Gita Sekar Andarini sebagai papa, Helisma Putri sebagai buna, Dhea Angelina sebagai tante dan sebagai tambahan Cindy Nugroho sebagai anak bungsu. ",
+            description = "Mutiara Azzahra Umandana, kerap disapa Muthe, lahir pada 12 Juli 2004 adalah anak kedua dari dua bersaudara. Muthe sudah berkeinginan menjadi anggota JKT48 sejak kecil dan pernah berfoto di Teater JKT48 ketika berumur delapan tahun.\n" + "\n" + "Di JKT48, Muthe rajin membuat vlog yang dikenal sebagai MuVlog dan beberapa video random. Muthe dan Angelina Christy memiliki kedekatan yang dikenal sebagai Musty. Muthe adalah anak dari Keluarga Cangcorang, yang terdiri dari Gita Sekar Andarini sebagai papa, Helisma Putri sebagai buna, Dhea Angelina sebagai tante dan sebagai tambahan Cindy Nugroho sebagai anak bungsu.",
             photoUrl = "https://jkt48.com/profile/mutiara_azzahra.jpg?v=20230116"
         ),
         // Raisha
@@ -252,7 +270,7 @@ object FakeDataSource {
             fanbase = "Never ending to Achieve Victory for Yessica (NAVY)",
             generation = 7,
             jiko = "Memberikan kebahagiaan lewat gummy smile-ku. Halo semuanya aku Chika.",
-            description = "Yessica Tamara (lahir 24 September 2002) yang akrab disapa Chika JKT48 adalah salah seorang anggota dari grup idola JKT48 dari generasi ketujuh. Sebelum restrukturisasi Chika berada di Tim KIII. Chika memiliki adik dari generasi ketujuh yaitu Angelina Christy. Jikoushokai (salam perkenalan) dari Chika di JKT48 adalah \"Memberikan kebahagiaan lewat gummy smile-ku. Halo, aku Chika!\". Chika memiliki basis penggemar yang disebut NAVY(Neverending to Achieve Victory for Yessica)",
+            description = "Yessica Tamara (lahir 24 September 2002) yang akrab disapa Chika JKT48 adalah salah seorang anggota dari grup idola JKT48 dari generasi ketujuh. Sebelum restrukturisasi Chika berada di Tim KIII. Chika memiliki adik dari generasi ketujuh yaitu Angelina Christy. Jikoushokai (salam perkenalan) dari Chika di JKT48 adalah \"Memberikan kebahagiaan lewat gummy smile-ku. Halo, aku Chika!\". Chika memiliki basis penggemar yang disebut NAVY (Neverending to Achieve Victory for Yessica)",
             photoUrl = "https://jkt48.com/profile/yessica_tamara.jpg?v=20230116"
         )
     )

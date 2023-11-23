@@ -14,6 +14,7 @@
     <string name="no_data_found">No data found</string>
     <string name="search_your_oshi">Search your oshi</string>
     <string name="navigate_back">Navigate back</string>
+    <string name="settings">Settings</string>
 
     <plurals name="generation">
         <item quantity="one">%dst Generation</item>

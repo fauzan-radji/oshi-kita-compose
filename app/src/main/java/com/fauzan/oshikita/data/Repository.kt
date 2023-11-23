@@ -27,11 +27,11 @@ class Repository {
         return if (query.isEmpty()) {
             members
         } else {
-            members.filter {
-                it.name.contains(query, ignoreCase = true) ||
-                it.nicknames.any { it.contains(query, ignoreCase = true) } ||
-                it.fanbase.contains(query, ignoreCase = true) ||
-                it.jiko.contains(query, ignoreCase = true)
+            members.filter { member ->
+                member.name.contains(query, ignoreCase = true) ||
+                member.nicknames.any { it.contains(query, ignoreCase = true) } ||
+                member.fanbase.contains(query, ignoreCase = true) ||
+                member.jiko.contains(query, ignoreCase = true)
             }
         }
     }
@@ -40,13 +40,13 @@ class Repository {
         return if (query.isEmpty()) {
             members.filter { it.isOshi }
         } else {
-            members.filter {
-                it.isOshi &&
+            members.filter { member ->
+                member.isOshi &&
                 (
-                    it.name.contains(query, ignoreCase = true) ||
-                    it.nicknames.any { it.contains(query, ignoreCase = true) } ||
-                    it.fanbase.contains(query, ignoreCase = true) ||
-                    it.jiko.contains(query, ignoreCase = true)
+                    member.name.contains(query, ignoreCase = true) ||
+                    member.nicknames.any { it.contains(query, ignoreCase = true) } ||
+                    member.fanbase.contains(query, ignoreCase = true) ||
+                    member.jiko.contains(query, ignoreCase = true)
                 )
             }
         }

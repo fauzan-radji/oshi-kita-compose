@@ -98,7 +98,7 @@ fun MainApp(
                 trailingIcon = {
                     Icon(
                         imageVector = Icons.Default.Settings,
-                        contentDescription = "Settings"
+                        contentDescription = stringResource(R.string.settings)
                     )
                 },
                 trailingIconOnClick = {
