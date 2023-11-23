@@ -183,7 +183,16 @@ object FakeDataSource {
             photoUrl = "https://jkt48.com/profile/kathrina_irene.jpg?v=20230116",
             isOshi = true
         ),
-        // Lulu
+        Member(
+            id = 21,
+            name = "Lulu Salsabila",
+            nicknames = listOf("Lulu"),
+            fanbase = "Lunarian",
+            generation = 8,
+            jiko = "Terang seperti bulan, bersinar seperti bintang.. Aku Lulu!",
+            description = "Lulu Salsabila (lahir di Serang, 23 Oktober 2002) yang biasa dipanggil Lulu (juga dikenal sebagai Lulu JKT48 (selama menjadi anggota JKT48) adalah salah seorang penyanyi Indonesia dan anggota JKT48 yang berasal dari Jakarta, Indonesia. Lulu merupakan anggota JKT48 generasi kedelapan yang diperkenalkan pada 27 April 2019. Jikoushokai (salam perkenalan) dari Lulu di JKT48 adalah Terang seperti bulan, bersinar seperti bintang.. Aku Lulu!. Lulu memiliki basis penggemar yang disebut Lunarian.",
+            photoUrl = "https://jkt48.com/profile/lulu_salsabila.jpg?v=20230116"
+        ),
         Member(
             id = 22,
             name = "Marsha Lenathea Lapian",
@@ -194,7 +203,16 @@ object FakeDataSource {
             description = "Marsha Lenathea Lapian (lahir 9 Januari 2006), juga dikenal sebagai Marsha JKT48, adalah seorang penyanyi Indonesia dan anggota grup idola JKT48. Ia merupakan anggota generasi kesembilan JKT48 yang diperkenalkan pada 1 Desember 2019.",
             photoUrl = "https://jkt48.com/profile/marsha_lenathea.jpg?v=20230116"
         ),
-        // Mute
+        Member(
+            id = 23,
+            name = "Mutiara Azzahra Umandana",
+            nicknames = listOf("Muthe", "Mumuchang", "Mutiara"),
+            fanbase = "Muffin",
+            generation = 7,
+            jiko = "Dengan kelincahanku, aku akan menari setiap hari. Panggil aku Mu Mu Mu Muthe!",
+            description = "Mutiara Azzahra Umandana, kerap disapa Muthe, lahir pada 12 Juli 2004 adalah anak kedua dari dua bersaudara. Muthe sudah berkeinginan menjadi anggota JKT48 sejak kecil dan pernah berfoto di Teater JKT48 ketika berumur delapan tahun.[2]\n" + "\n" + "Di JKT48, Muthe rajin membuat vlog yang dikenal sebagai MuVlog dan beberapa video random. Muthe dan Angelina Christy memiliki kedekatan yang dikenal sebagai Musty. Muthe adalah anak dari Keluarga Cangcorang, yang terdiri dari Gita Sekar Andarini sebagai papa, Helisma Putri sebagai buna, Dhea Angelina sebagai tante dan sebagai tambahan Cindy Nugroho sebagai anak bungsu. ",
+            photoUrl = "https://jkt48.com/profile/mutiara_azzahra.jpg?v=20230116"
+        ),
         // Raisha
         Member(
             id = 25,
@@ -210,14 +228,23 @@ object FakeDataSource {
         Member(
             id = 26,
             name = "Shani Indira Natio",
-            nicknames = listOf("Shani"),
+            nicknames = listOf("Shani", "Ci Shani"),
             fanbase = "Inshanity",
             generation = 3,
             jiko = "Semanis coklat selembut sutra. Hai aku Shani.",
             description = "Shani Indira Natio, S.I.Kom (lahir 5 Oktober 1998), secara mononim dikenal sebagai Shani JKT48, adalah seorang penyanyi dan penari Indonesia yang merupakan anggota grup idola JKT48. Ia merupakan anggota generasi ketiga JKT48 yang terpilih menjadi Kapten bersama Jinan Safa Safira sebagai Wakil Kapten pertama JKT48 New Era sejak tanggal 18 Desember 2021. Ia mengumumkan kelulusannya saat JKT48 Summer Festival yang digelar di Tennis Outdoor Senayan pada Minggu, 2 Juli 2023.",
             photoUrl = "https://jkt48.com/profile/shani_indira_natio.jpg?v=20230116"
         ),
-        // Ci Gre
+        Member(
+            id = 27,
+            name = "Shania Gracia Harlan",
+            nicknames = listOf("Gracia", "Ci Gre"),
+            fanbase = "Gracias",
+            generation = 3,
+            jiko = "Senyumku akan terekam jelas dalam ingatanmu seperti foto dengan sejuta warna. Namaku Gracia. Always smile.",
+            description = "Shania Gracia Harlan, S.I.Kom. (lahir 31 Agustus 1999) adalah salah aktris, penyanyi, dan penari berkebangsaan Indonesia. Shania merupakan anggota grup idola JKT48 generasi ketiga.",
+            photoUrl = "https://jkt48.com/profile/shania_gracia.jpg?v=20230116"
+        ),
         Member(
             id = 28,
             name = "Yessica Tamara",

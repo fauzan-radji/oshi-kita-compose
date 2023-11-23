@@ -1,6 +1,7 @@
 package com.fauzan.oshikita
 
-import android.widget.Toast
+import android.content.Intent
+import android.provider.Settings
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
@@ -60,6 +61,7 @@ fun MainApp(
 
     val homeQuery by homeViewModel.query
     val favoriteQuery by favoriteViewModel.query
+    val detailMember by detailViewModel.member.collectAsState()
 
     val navigationItems = listOf(
         NavigationItem(
@@ -100,7 +102,7 @@ fun MainApp(
                     )
                 },
                 trailingIconOnClick = {
-                    Toast.makeText(mContext, "Settings", Toast.LENGTH_SHORT).show()
+                    mContext.startActivity(Intent(Settings.ACTION_LOCALE_SETTINGS))
                 },
             ) {
                 when (currentRoute) {
@@ -120,7 +122,9 @@ fun MainApp(
 
                     else -> TopBarTitle(
                         text = when (currentRoute) {
-                            Screen.Detail.route -> stringResource(id = R.string.menu_detail)
+                            Screen.Detail.route -> detailMember
+                                ?.nicknames
+                                ?.first() ?: stringResource(id = R.string.app_name)
                             Screen.About.route -> stringResource(id = R.string.menu_about)
                             else -> stringResource(id = R.string.app_name)
                         }
@@ -138,7 +142,7 @@ fun MainApp(
         },
         floatingActionButton = {
             if (currentRoute == Screen.Detail.route) {
-                detailViewModel.member.collectAsState().value.let {it?.let { member ->
+                detailMember.let {it?.let { member ->
                     FloatingActionButton(onClick = {
                         detailViewModel.setOshi(member.id, !member.isOshi)
                     }) {

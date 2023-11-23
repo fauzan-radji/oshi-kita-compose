@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Oshi Kita</string>
+    <string name="menu_home">Beranda</string>
+    <string name="menu_detail">Detail</string>
+    <string name="menu_oshi">Oshi Saya</string>
+    <string name="menu_about">Tentang</string>
+    <string name="add_to_my_oshi">Tambahkan ke Oshi Saya</string>
+    <string name="fanbase">Fanbase</string>
+    <string name="nickname">Nama Panggilan</string>
+    <string name="full_name">Nama Lengkap</string>
+    <string name="jkt48">JKT48 %1$s</string>
+    <string name="my_name">Tri Putra Fauzan H. Radji</string>
+    <string name="my_email">triputrafauzan@gmail.com</string>
+    <string name="no_data_found">Tidak ada data ditemukan</string>
+    <string name="search_your_oshi">Cari oshi kamu</string>
+    <string name="navigate_back">Kembali</string>
+
+    <plurals name="generation">
+        <item quantity="other">Generasi ke-%d</item>
+    </plurals>
+</resources>
