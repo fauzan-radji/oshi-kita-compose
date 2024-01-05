@@ -6,9 +6,13 @@
 
 Here are some screenshots of the app
 
-<!-- to be added -->
+<p align="center">
+  <img src="screenshots/home.png" width="200" />
+  <img src="screenshots/favorite.png" width="200" />
+  <img src="screenshots/about.png" width="200" />
+  <img src="screenshots/detail.png" width="200" />
+</p>
 
-_\[To be added\]_
 
 ## Features
 
